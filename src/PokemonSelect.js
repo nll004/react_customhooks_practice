@@ -5,9 +5,9 @@ import { choice } from "./helpers";
 /* Select element to choose from common pokemon. */
 function PokemonSelect({ add, pokemon = pokemonList }) {
   const [pokeIdx, setPokeIdx] = useState(0);
-  const handleChange = evt => {
-    setPokeIdx(evt.target.value);
-  };
+  const basePkmApiUrl = "https://pokeapi.co/api/v2/pokemon";
+
+  const handleChange = evt => setPokeIdx(evt.target.value);
 
   return (
     <div>
@@ -18,8 +18,8 @@ function PokemonSelect({ add, pokemon = pokemonList }) {
           </option>
         ))}
       </select>
-      <button onClick={() => add(pokemon[pokeIdx])}>Catch one!</button>
-      <button onClick={() => add(choice(pokemon))}>I'm feeling lucky</button>
+      <button onClick={() => add(basePkmApiUrl, pokemon[pokeIdx])}>Catch one!</button>
+      <button onClick={() => add(basePkmApiUrl, choice(pokemon))}>I'm feeling lucky</button>
     </div>
   );
 }
