@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import pokemonList from "./pokemonList";
 import { choice } from "./helpers";
 
+const basePkmApiUrl = "https://pokeapi.co/api/v2/pokemon";
+
 /* Select element to choose from common pokemon. */
 function PokemonSelect({ add, pokemon = pokemonList }) {
   const [pokeIdx, setPokeIdx] = useState(0);
-  const basePkmApiUrl = "https://pokeapi.co/api/v2/pokemon";
-
   const handleChange = evt => setPokeIdx(evt.target.value);
 
   return (

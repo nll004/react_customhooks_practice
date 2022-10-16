@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useAxios from "./hooks/useAxios";
 import PokemonSelect from "./PokemonSelect";
 import PokemonCard from "./PokemonCard";
